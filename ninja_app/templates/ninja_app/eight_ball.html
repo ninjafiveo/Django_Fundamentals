@@ -1,0 +1,31 @@
+<!-- ninja_app/templates/ninja_app/eight_ball.html -->
+{% load static %}  <!-- Load the static files template tag library -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Magic 8-Ball</title>
+    <link rel="stylesheet" href="{% static 'ninja_app/styles.css' %}" />
+    {% comment %} <link rel="stylesheet" href="{% static 'ninja_app/static/ninja_app/styles.css' %}" /> {% endcomment %}
+</head>
+<body>
+    <h1>Magic 8-Ball Response</h1>
+    <img src="https://m.media-amazon.com/images/I/519eISOHt0L._AC_UF1000,1000_QL80_.jpg">
+
+    {% comment %} This is a hyper link to click to generate a new response. {% endcomment %}
+    {% comment %} <a href="{% url 'eight_ball' %}">Ask again</a> {% endcomment %}
+
+        {% comment %} Form with a button instead of a hyperlink {% endcomment %}
+        <form action="{% url 'eight_ball' %}" method="get">
+            <input type="text" name="question" placeholder="Type your question here..." required>
+            <button type="submit">Ask Again</button>
+        </form>
+
+            <!-- Display the question and response if a question has been asked -->
+    {% if question %}
+    <h2>You asked: {{ question }}</h2>
+    <p>Magic 8-Ball says: {{ response }}</p>
+    {% endif %}
+
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+Set Up Virtual Environment
+1. In terminal type:  python -m venv env
+    Note: the "env" can be labeled anything. Ninja, venv, bob, my_virtual_environment, etc.
+2. In terminal type to activate virtual environment: .\env\Scripts\activate
+
+Creating Django App
+3. To install django in virtual environment type: pip install django
+4. Creating your Django Project, in terminal: django-admin startproject myproject .
+    "myproject" can be labeled anything.
+
+5. Migrate the Database: Before running the server, apply migrations to set up the database by running: python manage.py migrate
+6. Run the Server: Start the Django development server with python manage.py runserver
+    To access the site: Open your web browser and go to http://127.0.0.1:8000/. You should see the Django welcome page, indicating that your project is running successfully.
+
+Creating Your First Django App
+7. Create an App: In your terminal, run the following command, replacing myapp with the name you wish for your app:python manage.py startapp myapp
+8. Register the App: Open the settings.py file in the myproject directory. Find the INSTALLED_APPS list and add your app's name ('myapp') to the list.
+
+
+Start Server
+python manage.py runserver
+
+Stop Server
+Ctrl + c
+
+##
+Exploring and Developing Your App:
+Create Views: In your app directory (myapp), open the views.py file. Define your view functions here.
+Configure URLs: In the myproject directory, locate the urls.py file and include URLs for your app.
+Develop: Use models to define your database schema, templates to manage your front-end, and forms for user input.
+
+##
+Testing Your App
+Create Tests: In your app directory, edit the tests.py file or create a tests/ directory to write test cases.
+Run Tests: Run python manage.py test in your terminal to execute the tests and ensure your app works as expected.
